@@ -1,0 +1,48 @@
+<div id="main">
+  <header class="mb-3">
+    <a href="#" class="burger-btn d-block d-xl-none">
+      <i class="bi bi-justify fs-3"></i>
+    </a>
+  </header>
+  <div class="page-heading">
+    <div class="page-title">
+      <div class="row">
+        <div class="col-12 col-md-6 order-md-1 order-last">
+          <h3>Congregação</h3>
+          <p class="text-subtitle text-muted"></p>
+        </div>
+        <div class="col-12 col-md-6 order-md-2 order-first">
+        </div>
+      </div>
+    </div>
+    <!-- Striped rows start -->
+    <section id="multiple-column-form">
+      <div class="row match-height">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title">Nova Congregação</h4>
+            </div>
+            <div class="card-content">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-6 col-12">
+                    <%= simple_form_for @congregacao, html: { class: 'form' } do |f| %>
+                      <%= f.error_notification %>
+                      <div class="form-group">
+                        <%= f.input :descricao, label: 'Nome da Congregação', input_html: { class: 'form-control' } %>
+                      </div>
+                      <div class="form-group">
+                        <%= f.button :submit, 'Salvar', class: 'btn btn-primary' %>
+                        <%= link_to 'Voltar', congregacoes_path, class: 'btn btn-secondary' %>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>

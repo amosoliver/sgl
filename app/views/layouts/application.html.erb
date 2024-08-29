@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Slg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="/mazer-1.0.0/dist/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/mazer-1.0.0/dist/assets/vendors/iconly/bold.css">
+    <link rel="stylesheet" href="/mazer-1.0.0/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="/mazer-1.0.0/dist/assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="/mazer-1.0.0/dist/assets/css/app.css">
+    <link rel="shortcut icon" href="/mazer-1.0.0/dist/assets/images/favicon.svg" type="image/x-icon">
+  </head>
+  <body>
+    <%= render 'shared/sidebar' %>
+    <%= yield %>
+    <!-- JS Files -->
+    <script src="/mazer-1.0.0/dist/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="/mazer-1.0.0/dist/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="/mazer-1.0.0/dist/assets/vendors/apexcharts/apexcharts.js"></script>
+    <script src="/mazer-1.0.0/dist/assets/js/pages/dashboard.js"></script>
+    <script src="/mazer-1.0.0/dist/assets/js/main.js"></script>
+  </body>
+</html>

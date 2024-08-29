@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  valor: 9.99
+  congregacao: one
+  trimestre: 1
+  ano: 1
+
+two:
+  valor: 9.99
+  congregacao: two
+  trimestre: 1
+  ano: 1
