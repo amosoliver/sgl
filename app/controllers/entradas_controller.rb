@@ -6,7 +6,8 @@ def index
 end
 
 def edit
-  
+  @congregacoes = Congregacao.all
+
 end
 
 def show
@@ -14,8 +15,10 @@ def show
 end
 
 def new
-  
+  @entrada = Entrada.new
+  @congregacoes = Congregacao.all
 end
+
 
 def create
   @entrada = Entrada.new(entrada_params)
@@ -26,21 +29,30 @@ def create
   end
 end
 def update
-  @entrada.update(entrada_params)
+if @entrada.update(entrada_params)
+   redirect_to entradas_path, notice: 'Entrada editada com sucesso'
+else
+  render :edit
+end
+
 end
 
 def destroy
-  
+  @entrada.destroy 
+
+  redirect_to entradas_path , notice: 'Entrada deletada com sucesso'
 end
 
 private
 
-def set_congregacao
-
+def set_entrada
+  @entrada = Entrada.find(params[:id])
 end
+
 
 def entrada_params
-  
+  params.require(:entrada).permit( :congregacao_id, :valor)
 end
+
 
 end

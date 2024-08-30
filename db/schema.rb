@@ -11,19 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.1].define(version: 2024_08_26_140639) do
-  create_table "congregacaos", force: :cascade do |t|
-    t.string "descricao"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "congregacoes", force: :cascade do |t|
-    t.string "descricao"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "congregacos", force: :cascade do |t|
     t.string "descricao"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -47,6 +35,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_26_140639) do
     t.index ["congregacao_id"], name: "index_literaturas_on_congregacao_id"
   end
 
-  add_foreign_key "entradas", "congregacaos"
-  add_foreign_key "literaturas", "congregacaos"
+  add_foreign_key "entradas", "congregacoes"
+  add_foreign_key "literaturas", "congregacoes"
 end

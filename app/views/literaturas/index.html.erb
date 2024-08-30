@@ -28,28 +28,32 @@
                     <thead>
                       <tr>
                         <th>#</th>
+                        <th>Congregação</th>
+                        <th>Trimestre</th>
+                        <th>Ano</th>
                         <th>Valor</th>
-                        <th>Ações</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <%@entradas.each do |entrada|%>
+                      <%@literaturas.each do |literatura|%>
                         <tr>
-                          <td> <%= entrada.congregacao.descricao %> </td>
-                          <td> <%= entrada.valor%> </td>
+                          <td> <%= literatura.congregacao.descricao %> </td>
+                          <td> <%= literatura.valor%> </td>
+                          <td> <%= literatura.trimestre%> </td>
+                          <td> <%= literatura.ano%> </td>
                           <td>
                             <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               <i class="bi bi-gear dropdown-icon"></i>
                             </button>
                             <div class="dropdown-menu">
-                              <%= link_to entrada_path(entrada), class: "dropdown-item" do %>
+                              <%= link_to literatura_path(literatura), class: "dropdown-item" do %>
                                 <i class="bi bi-eye"></i> Visualizar
                               <% end %>
-                              <%= link_to edit_entrada_path(entrada), class: "dropdown-item" do %>
+                              <%= link_to edit_literatura_path(literatura), class: "dropdown-item" do %>
                                 <i class="bi bi-pencil"></i> Editar
                               <% end %>
-                              <%= button_to entrada_path(entrada), method: :delete, class: "dropdown-item" do %>
+                              <%= button_to literatura_path(literatura), method: :delete, class: "dropdown-item" do %>
                                 <i class="bi bi-trash"></i> Deletar
                               <% end %>
                             </div>

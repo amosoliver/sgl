@@ -21,28 +21,44 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h4 class="card-title">Nova Entrada</h4>
+              <h4 class="card-title">Nova Literatura</h4>
             </div>
             <div class="card-content">
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-6 col-12">
-                    <%= simple_form_for @entrada, html: { class: 'form' } do |f| %>
+                    <%= simple_form_for @literatura, html: { class: 'form' } do |f| %>
                       <%= f.error_notification %>
                       <!-- Campo de seleção para Congregação -->
                       <div class="form-group">
                         <%= f.input :congregacao_id, 
-          as: :select, 
-          collection: @congregacoes.map { |c| [c.descricao, c.id] }, 
-          label: 'Congregação', 
-          input_html: { class: 'form-control' } %>
+                        as: :select, 
+                        collection: @congregacoes.map { |c| [c.descricao, c.id] }, 
+                        label: 'Congregação', 
+                        input_html: { class: 'form-control' } %>
+                      </div>
+
+                      <div class="form-group">
+                                            <%= f.input :trimestre, 
+                        as: :select, 
+                        collection: (1..4).map { |n| [n, n] }, 
+                        label: 'Trimestre', 
+                        input_html: { class: 'form-control' } %>
+                      </div>
+
+                      <div class="form-group">
+                                            <%= f.input :ano, 
+                        as: :select, 
+                        collection: (2020..2028).map { |year| [year, year] }, 
+                        label: 'Ano', 
+                        input_html: { class: 'form-control' } %>
                       </div>
                       <!-- Campo para valor -->
                       <div class="form-group">
-                        <%= f.input :valor, 
-          as: :numeric, 
-          label: 'Valor', 
-          input_html: { class: 'form-control' } %>
+                                      <%= f.input :valor, 
+                        as: :numeric, 
+                        label: 'Valor', 
+                        input_html: { class: 'form-control' } %>
                       </div>
                       <!-- Botão de submissão -->
                       <div class="form-group">

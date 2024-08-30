@@ -26,20 +26,24 @@
           </a>
           <ul class="submenu ">
             <li class="submenu-item ">
-              <a href="/mazer-1.0.0/src/component-alert.html">Valores</a>
+              <%= link_to literaturas_path, class: 'sidebar-link' do%>
+                Valores
+              <%end%>
             </li>
             <li class="submenu-item ">
-              <a href="/mazer-1.0.0/src/component-badge.html">Relatório</a>
+              <%= link_to literaturas_relatorio_path, class: 'sidebar-link' do%>
+                Relatório
+              <%end%>
             </li>
           </ul>
         </li>
         <li class="sidebar-item  ">
           <%= link_to entradas_path, class:'sidebar-link' do %>
-          <i class="fa-solid fa-money-bill"></i>           <span>Entradas</span>
-        <% end %>
-      </li>
-    </ul>
+            <i class="fa-solid fa-money-bill"></i>           <span>Entradas</span>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
   </div>
-  <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
-</div>
 </div>

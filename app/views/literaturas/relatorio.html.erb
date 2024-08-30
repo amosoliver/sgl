@@ -1,0 +1,11 @@
+ <div id="main"> 
+ <tbody>
+    <% @relatorio.each do |resultado| %>
+      <tr>
+        <td><%= resultado.congregacao_descricao %></td>
+        <td><%= resultado.literatura_valor %></td>
+        <td><%= resultado.total_entradas %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</div>
