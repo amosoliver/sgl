@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_26_140639) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_02_125134) do
   create_table "congregacoes", force: :cascade do |t|
     t.string "descricao"
     t.datetime "created_at", null: false
@@ -22,6 +22,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_26_140639) do
     t.decimal "valor"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "trimestre"
+    t.integer "ano"
     t.index ["congregacao_id"], name: "index_entradas_on_congregacao_id"
   end
 

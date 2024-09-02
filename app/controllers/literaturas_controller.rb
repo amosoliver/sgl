@@ -41,9 +41,15 @@ class LiteraturasController < ApplicationController
   end
 
   def relatorio
-    @relatorio = Literatura.relatorio
+    raw_result = Literatura.relatorio
+    @relatorio = raw_result.map do |row|
+      Hash[row.keys.zip(row.values)]
+    end
+  
+    Rails.logger.debug "Tipo de @relatorio: #{@relatorio.class.name}" # Verifique o tipo
+    Rails.logger.debug "Conteúdo de @relatorio: #{@relatorio.inspect}" # Verifique o conteúdo
   end
-
+  
   private
 
   def set_literatura

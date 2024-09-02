@@ -14,10 +14,10 @@
       <ul class="menu">
         <li class="sidebar-title">Menu</li>
         <li class="sidebar-item active ">
-          <a href="index.html" class='sidebar-link'>
+          <%= link_to congregacoes_path, class:'sidebar-link' do %>
             <i class="bi bi-house-door"></i>
-            <span>Congregações</span>
-          </a>
+            <span>Congregações</span>    
+          <% end %>
         </li>
         <li class="sidebar-item  has-sub">
           <a href="#" class='sidebar-link'>

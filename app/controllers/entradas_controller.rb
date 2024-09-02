@@ -51,7 +51,7 @@ end
 
 
 def entrada_params
-  params.require(:entrada).permit( :congregacao_id, :valor)
+  params.require(:entrada).permit( :congregacao_id, :valor, :trimestre, :ano)
 end
 
 

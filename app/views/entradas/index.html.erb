@@ -33,9 +33,12 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <%@entradas.each do |entrada|%>
+                      <%@entradas.each_with_index do |entrada, index|%>
                         <tr>
+                          <td> <%= index + 1 %> </td>
                           <td> <%= entrada.congregacao.descricao %> </td>
+                          <td> <%= entrada.trimestre%> </td>
+                          <td> <%= entrada.ano%> </td>
                           <td> <%= entrada.valor%> </td>
                           <td>
                             <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"

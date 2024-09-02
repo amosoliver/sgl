@@ -1,11 +1,60 @@
- <div id="main"> 
- <tbody>
-    <% @relatorio.each do |resultado| %>
-      <tr>
-        <td><%= resultado.congregacao_descricao %></td>
-        <td><%= resultado.literatura_valor %></td>
-        <td><%= resultado.total_entradas %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<div id="main">
+  <header class="mb-3">
+    <a href="#" class="burger-btn d-block d-xl-none">
+      <i class="bi bi-justify fs-3"></i>
+    </a>
+  </header>
+  <div class="page-heading">
+    <div class="page-title">
+      <div class="row">
+        <div class="col-12 col-md-6 order-md-1 order-last">
+          <h3>Relatório de Congregação</h3>
+          <p class="text-subtitle text-muted"></p>
+        </div>
+        <div class="col-12 col-md-6 order-md-2 order-first">
+        </div>
+      </div>
+    </div>
+    <!-- Striped rows start -->
+    <section class="section">
+      <div class="row" id="table-striped">
+        <div class="col-12">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <!-- table striped -->
+                <div class="table-responsive">
+                  <table class="table table-striped mb-0" >
+                    <thead>
+                      <tr>
+                        <th>Congregação</th>
+                        <th>Trimestre</th>
+                        <th>Ano</th>
+                        <th>Valor a Pagar</th>
+                        <th>Valor Pago</th>
+                        <th>Valor Pendente</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <% @relatorio.each do |registro| %>
+                        <tr>
+                          <td><%= registro['congregacao'] %></td>
+                          <td><%= registro['trimestre_literatura'] %></td>
+                          <td><%= registro['ano'] %></td>
+                          <td><%= registro['valor_a_pagar'] %></td>
+                          <td><%= registro['valor_pago'] %></td>
+                          <td><%= registro['valor_pendente'] %></td>
+                        </tr>
+                      <% end %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </div>
+
