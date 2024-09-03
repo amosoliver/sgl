@@ -24,7 +24,7 @@
               <div class="card-body">
                 <!-- table striped -->
                 <div class="table-responsive">
-                  <table class="table table-striped mb-0" >
+                  <table class="table table-striped mb-0">
                     <thead>
                       <tr>
                         <th>Congregação</th>
@@ -37,13 +37,19 @@
                     </thead>
                     <tbody>
                       <% @relatorio.each do |registro| %>
-                        <tr>
+                        <tr class="<%= registro['linha_classe'] %>">
                           <td><%= registro['congregacao'] %></td>
                           <td><%= registro['trimestre_literatura'] %></td>
                           <td><%= registro['ano'] %></td>
-                          <td><%= registro['valor_a_pagar'] %></td>
-                          <td><%= registro['valor_pago'] %></td>
-                          <td><%= registro['valor_pendente'] %></td>
+                          <td><%= number_to_currency(registro['valor_a_pagar'], unit: "R$", separator: ",", delimiter: ".") %></td>
+                          <td><%= number_to_currency(registro['valor_pago'], unit: "R$", separator: ",", delimiter: ".") %></td>
+                          <td>
+                            <% if registro['valor_pendente'].to_f < 3 %>
+                              PAGO
+                            <% else %>
+                              <%= number_to_currency(registro['valor_pendente'], unit: "R$", separator: ",", delimiter: ".") %>
+                            <% end %>
+                          </td>
                         </tr>
                       <% end %>
                     </tbody>
@@ -57,4 +63,3 @@
     </section>
   </div>
 </div>
-

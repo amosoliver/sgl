@@ -43,12 +43,25 @@ class LiteraturasController < ApplicationController
   def relatorio
     raw_result = Literatura.relatorio
     @relatorio = raw_result.map do |row|
-      Hash[row.keys.zip(row.values)]
+      total = row['valor_a_pagar'].to_f
+      pago = row['valor_pago'].to_f
+      percentual_pago = total > 0 ? (pago / total * 100) : 0
+  
+      linha_classe = if percentual_pago >= 100
+                       'table-success'
+                     elsif percentual_pago >= 80
+                       'table-warning'
+                     else
+                       'table-danger'
+                     end
+  
+      row.merge('percentual_pago' => percentual_pago, 'linha_classe' => linha_classe)
     end
   
     Rails.logger.debug "Tipo de @relatorio: #{@relatorio.class.name}" # Verifique o tipo
     Rails.logger.debug "Conteúdo de @relatorio: #{@relatorio.inspect}" # Verifique o conteúdo
   end
+  
   
   private
 
