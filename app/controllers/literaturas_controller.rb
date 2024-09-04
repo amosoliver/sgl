@@ -2,7 +2,7 @@ class LiteraturasController < ApplicationController
   before_action :set_literatura, only: [:show, :edit, :update, :destroy]
 
   def index
-    @literaturas = Literatura.all
+    @literaturas = Literatura.order(:id)
   end
 
   def new

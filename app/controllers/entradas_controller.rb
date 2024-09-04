@@ -1,9 +1,11 @@
 class EntradasController < ApplicationController
   before_action :set_entrada, only: [:show, :edit, :update, :destroy] 
 
-def index
-  @entradas = Entrada.all
-end
+  def index
+    @entradas = Entrada.joins(:congregacao).order('congregacoes.descricao', :congregacao_id, :trimestre)
+  end
+  
+  
 
 def edit
   @congregacoes = Congregacao.all

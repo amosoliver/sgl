@@ -22,6 +22,8 @@ class Literatura < ApplicationRecord
         literaturas.trimestre,
         literaturas.ano,
         literaturas.valor
+    ORDER BY 
+        congregacoes.descricao    
 
     SQL
   

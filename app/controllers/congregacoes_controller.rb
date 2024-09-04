@@ -2,7 +2,7 @@ class CongregacoesController < ApplicationController
 
   before_action :set_congregacao, only: [:show, :edit, :destroy, :update]
   def index
-    @congregacoes = Congregacao.all
+    @congregacoes = Congregacao.order(:descricao)
   end
 
   def show
